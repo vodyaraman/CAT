@@ -1,0 +1,49 @@
+---
+import "@/global_styles/global.css";
+import { ClientRouter } from "astro:transitions";
+
+import AnimationManager from "./AnimationManagerLayout";
+import LenisInit from "./LenisInitLayout";
+
+import LoadingScreen from "@/components/loading_screen/index.astro";
+
+const {
+	title = "Шаблонная страница",
+	description = "Описание страницы",
+	keywords = "Ключевые слова на странице",
+	locale = "ru",
+} = Astro.props;
+---
+
+<html lang={locale}>
+	<head>
+		<ClientRouter />
+
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<title>{title}</title>
+
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta
+			property="og:locale"
+			content={locale === "ru" ? "ru_RU" : "en_US"}
+		/>
+		<meta property="og:image" content="/seo/og-image.png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	</head>
+	<body>
+		<LoadingScreen />
+		<main transition:animate="slide">
+			<LenisInit client:only />
+			<slot />
+			<AnimationManager client:only="react" />
+		</main>
+	</body>
+</html>

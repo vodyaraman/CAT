@@ -1,0 +1,43 @@
+// Цвета — пастельные, сбалансированные
+$color-bg: #fefefe;
+$color-text: #1a1a1a;
+$color-accent: #c1a57b;
+$color-accent-light: #e7dac3;
+$color-border: #e0e0e0;
+$color-muted: #999;
+
+// Размеры
+$container-max-width: 1250px;
+$section-padding: 80px;
+$gutter: 24px;
+
+// Брейкпоинты
+$breakpoint-xl: 1340px;
+$breakpoint-lg: 1020px;
+$breakpoint-md: 700px;
+$breakpoint-sm: 480px;
+
+// Типографика
+$font-base: 'Helvetica', sans-serif;
+$font-size-base: 16px;
+$font-size-lg: 20px;
+$font-size-sm: 14px;
+$line-height-base: 1.5;
+
+// z-index
+$z-header: 1000;
+$z-modal: 2000;
+$z-loader: 3000;
+
+// Тени
+$shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+$shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.1);
+
+// Анимации
+$transition-fast: 0.2s ease-in-out;
+$transition-slow: 0.4s ease-in-out;
+
+// Радиусы
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;

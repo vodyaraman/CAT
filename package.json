@@ -9,6 +9,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.7.3"
+    "@astrojs/react": "^4.2.4",
+    "@react-three/drei": "^10.0.6",
+    "@react-three/fiber": "^9.1.2",
+    "@studio-freight/lenis": "^1.0.42",
+    "@swup/astro": "^1.6.0",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "astro": "^5.7.3",
+    "gsap": "^3.12.7",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sass": "^1.86.3",
+    "swup": "^4.8.1",
+    "three": "^0.175.0"
   }
 }

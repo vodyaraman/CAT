@@ -1,47 +1,68 @@
-# Astro Starter Kit: Minimal
+📁 Структура проекта
+csharp
+Копировать
+Редактировать
+.
+├── .astro/                  # Кэш Astro
+├── .vscode/                 # Настройки редактора (опционально)
+├── node_modules/            # Установленные зависимости
+├── public/                  # Статические ресурсы (изображения, шрифты и т.д.)
+├── src/                     # Исходный код проекта
+│   ├── global_styles/       # Глобальные стили SCSS
+│   │   ├── mixins.scss      # Миксины для SCSS (сетка, адаптив и т.д.)
+│   │   └── variables.scss   # Цвета, отступы, брейкпоинты и другие переменные
+│   └── pages/               # Astro-страницы (index.astro и др.)
+├── .gitignore               # Игнорируемые Git-файлы
+├── astro.config.mjs         # Конфигурация Astro + Vite + алиасы
+├── package.json             # Зависимости и скрипты проекта
+├── package-lock.json        # Лок-файл npm
+├── README.md                # Документация проекта
+├── tsconfig.json            # Настройки TypeScript + алиасы
+└── types.d.ts               # Типы для .astro-файлов
 
-```sh
-npm create astro@latest -- --template minimal
-```
+🎨 Глобальные стили
+Файлы variables.scss и mixins.scss автоматически подключаются ко всем SCSS-файлам проекта через настройку vite.css.preprocessorOptions. Не требуется ручной @use.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+lient" />
+Подключает типы для .astro файлов.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+ts
+Копировать
+Редактировать
+// Расширяет JSX-элементы React, чтобы поддерживать теги из three.js
+import { ThreeElements } from '@react-three/fiber'
 
-## 🚀 Project Structure
+declare global {
+  namespace React {
+    namespace JSX {
+      interface IntrinsicElements extends ThreeElements {}
+    }
+  }
+}
+Добавляет поддержку трехмерных компонентов из @react-three/fiber напрямую в JSX.
 
-Inside of your Astro project, you'll see the following folders and files:
+ts
+Копировать
+Редактировать
+// Глобальные переменные для Lenis
+declare global {
+  interface Window {
+    lenis: import('@studio-freight/lenis').Lenis;
+    __onLenisReady?: ((lenis: any) => void)[];
+  }
+}
+Определяет глобальный объект window.lenis для доступа к экземпляру кастомного скролла Lenis по всему проекту.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+🔄 Swup — анимации между страницами
+Проект использует Swup для плавных переходов между страницами. Он уже настроен и подключен с плагинами:
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+@swup/js-plugin
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+@swup/preload-plugin
 
-Any static assets, like images, can be placed in the `public/` directory.
+@swup/progress-plugin
 
-## 🧞 Commands
+@swup/parallel-plugin
 
-All commands are run from the root of the project, from a terminal:
+Swup автоматически инициализируется при загрузке страницы, управляет переходами, прелоадом и индикатором загрузки. Визуальные эффекты подключаются через data-swup-transition.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

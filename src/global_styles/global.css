@@ -42,6 +42,11 @@ a {
   text-decoration: none;
 }
 
+/* LIST ITEMS */
+ul, li {
+  list-style: none;
+}
+
 /* UTILITY */
 .hidden {
   display: none !important;

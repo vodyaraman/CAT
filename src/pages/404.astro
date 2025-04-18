@@ -1,0 +1,67 @@
+---
+import BasePageLayout from "@/layouts/BasePageLayout.astro";
+---
+
+<BasePageLayout title="Страница не найдена">
+    <style>
+        .not-found {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 80vh;
+            text-align: center;
+            padding: 80px;
+        }
+
+        .not-found__container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .not-found__icon {
+            display: flex;
+            width: 64px;
+            height: 64px;
+            margin-bottom: 2rem;
+            filter: invert(1);
+        }
+
+        .not-found__title {
+            font-size: 6rem;
+            font-weight: bold;
+            color: #c1a57b;
+            margin-bottom: 1rem;
+        }
+
+        .not-found__text {
+            font-size: 20px;
+            color: #999;
+            margin-bottom: 2rem;
+        }
+
+        .not-found__link {
+            font-size: 14px;
+            color: #1a1a1a;
+            text-decoration: underline;
+            transition: color 0.4s ease-in-out;
+        }
+
+        .not-found__link:hover {
+            color: #c1a57b;
+        }
+    </style>
+
+    <section class="not-found">
+        <div class="not-found__container">
+            <img src="/favicon.svg" alt="" class="not-found__icon" />
+            <h1 class="not-found__title">404</h1>
+            <p class="not-found__text">Страница не найдена</p>
+            <a href="/" class="not-found__link">На главную</a>
+        </div>
+    </section>
+</BasePageLayout>

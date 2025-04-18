@@ -1,0 +1,203 @@
+// Переменные
+$header-bg: $color-accent;
+$header-text: $color-accent-light;
+$header-link: $color-accent-light;
+$header-link-hover: $color-text;
+$burger-bg: $color-bg;
+$burger-hover-text: $color-border;
+$burger-hover-bg: $color-accent-light;
+
+$header-height: 60px;
+$header-top: 0;
+$header-padding-x: $section-padding;
+$header-radius: $radius-lg;
+$header-font-weight: 400;
+$header-text-size: 1.25rem;
+$burger-font-size: 1rem;
+
+$burger-overlay: rgba(0, 0, 0, 0.4);
+$burger-text: $color-text;
+$burger-text-soft: $color-border;
+$burger-text-hover: $color-accent;
+$burger-padding-x: 5vw;
+$burger-padding-y: 10vh;
+$burger-gap: 2rem;
+$burger-title-size: calc(1.5 * (1vw + 1vh));
+$burger-title-margin: 40px;
+$burger-item-font-size: 1.5rem;
+
+// Header
+.header {
+    @include flexbox(row);
+    justify-content: space-between;
+    position: sticky;
+    top: $header-top;
+    left: 0;
+    width: 100vw;
+    height: $header-height;
+    background-color: $header-bg;
+    padding: $header-padding-x;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    z-index: $z-header;
+
+    &__logo {
+        @include flexbox(row);
+        gap: 20px;
+        justify-content: flex-start;
+        width: auto;
+        text-wrap: nowrap;
+        cursor: pointer;
+
+        img {
+            width: 2.25rem;
+            height: 2.25rem;
+            object-fit: cover;
+        }
+
+        &.text {
+            font-family: $font-base;
+            font-size: $header-text-size;
+            color: $header-text;
+            font-weight: $header-font-weight;
+        }
+    }
+
+    &__nav-list {
+        @include flexbox(row);
+        gap: calc(20px + 1.5vw);
+        padding: 0 calc(20px + 2.5vw);
+        justify-content: flex-start;
+        width: 100%;
+        box-sizing: border-box;
+
+        .link {
+            color: $header-link;
+            font-family: $font-base;
+            font-size: $header-text-size;
+            width: auto;
+            font-weight: 300;
+            cursor: pointer;
+            text-wrap: nowrap;
+            @include transition(color, $transition-slow);
+
+            &:hover {
+                color: $header-link-hover;
+            }
+        }
+    }
+
+    &__burger {
+        @include flexbox(row);
+        gap: 10px;
+        background-color: $burger-bg;
+        border-radius: $header-radius;
+        padding: 0.5rem 2rem;
+
+        font-family: $font-base;
+        font-weight: 500;
+        font-size: $burger-font-size;
+        cursor: pointer;
+        @include transition(background, $transition-slow);
+        @include transition(color, $transition-slow);
+
+        &:hover {
+            color: $burger-hover-text;
+            background-color: $burger-hover-bg;
+        }
+
+        .icon {
+            background-color: transparent;
+        }
+    }
+}
+
+// Burger menu
+.burger-menu-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $burger-overlay;
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: flex-start;
+    z-index: $z-header;
+}
+
+.burger-menu {
+    width: 33vw;
+    min-width: 400px;
+    height: 100%;
+    background-color: $burger-bg;
+    padding: $burger-padding-y 0;
+
+    &__close {
+        position: absolute;
+        top: 1rem;
+        left: 1.5rem;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: $burger-text-soft;
+        cursor: pointer;
+        z-index: $z-header + 1;
+    }
+
+    &__nav {
+        @include flexbox(column);
+        justify-content: flex-start;
+        height: 100%;
+    }
+
+    &__title {
+        color: $burger-text-soft;
+        font-family: $font-base;
+        font-weight: 500;
+        font-size: $burger-title-size;
+        margin-bottom: $burger-title-margin;
+    }
+
+    &__list {
+        @include flexbox(column);
+        gap: $burger-gap;
+        width: 80%;
+        padding: 5vh $burger-padding-x;
+    }
+
+    &__item {
+        a {
+            font-family: $font-base;
+            font-size: $burger-item-font-size;
+            color: $burger-text-soft;
+            cursor: pointer;
+        }
+
+        &:hover {
+            color: $burger-text-hover;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-md) {
+    .header {
+        padding: 1rem;
+        &__nav-list {
+            display: none;
+        }
+        &__burger {
+            max-width: 200px;
+            padding: 0.33rem 0.5rem;
+        }
+    }
+
+    .burger-menu-wrapper {
+        top: $header-height;
+    }
+
+    .burger-menu {
+        width: 100%;
+    }
+}

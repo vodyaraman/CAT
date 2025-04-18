@@ -1,0 +1,64 @@
+$button-radius: 0.5rem;
+$button-padding-y: 0.75rem;
+$button-padding-x: 1.5rem;
+$button-bg: $color-bg;
+$button-text: $color-text;
+$button-font-size: 1.25rem;
+$button-font-weight: 600;
+
+$button-max-width: 500px;
+
+.main-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    max-width: $button-max-width;
+    width: auto;
+
+    background-color: $button-bg;
+    color: $button-text;
+    text-shadow: $shadow-soft;
+
+    padding: $button-padding-y $button-padding-x;
+    border: none;
+    border-radius: $button-radius;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+
+    &.outlined {
+        border: 1px solid $color-accent;
+        background-color: transparent;
+    }
+
+    &.contained {
+        background-color: $color-accent;
+        color: $color-bg;
+    }
+
+    &__text {
+        color: inherit;
+        font-size: $button-font-size;
+        font-weight: $button-font-size;
+        text-shadow: $shadow-soft;
+        scale: 1;
+        user-select: none;
+        pointer-events: none;
+        transition: scale 0.25s ease;
+        will-change: scale;
+    }
+
+    &:hover {
+        .main-button__text {
+            scale: 1.05;
+        }
+    }
+
+    @media (max-width: $breakpoint-md) {
+        &__text {
+            font-size: $button-font-size * 0.8;
+        }
+    }
+}

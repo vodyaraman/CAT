@@ -3,7 +3,6 @@ import "@/global_styles/global.css";
 import { ClientRouter } from "astro:transitions";
 
 import AnimationManager from "./AnimationManagerLayout";
-import LenisInit from "./LenisInitLayout";
 
 import LoadingScreen from "@/components/loading_screen/index.astro";
 
@@ -41,7 +40,6 @@ const {
 	<body>
 		<LoadingScreen />
 		<main transition:animate="slide">
-			<LenisInit client:only />
 			<slot />
 			<AnimationManager client:only="react" />
 		</main>

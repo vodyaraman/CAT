@@ -1,0 +1,15 @@
+---
+import "./header.scss";
+import BurgerMenu from "./burger/BurgerMenu.tsx";
+---
+
+<header class="header">
+    <a href="/" class="header__logo text">Название сайта</a>
+
+    <nav class="header__nav-list">
+        <a href="/" class="header__nav-list link"> Каталог 1 </a>
+        <a href="/" class="header__nav-list link"> Каталог 2 </a>
+    </nav>
+
+    <BurgerMenu client:load />
+</header>

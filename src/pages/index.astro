@@ -1,4 +1,7 @@
 ---
+import LinkButton from "@/components/buttons/LinkButton";
+import Header from "@/components/header/Header.astro";
+import FormInput from "@/components/inputs/FormInput";
 import BasePageLayout from "@/layouts/BasePageLayout.astro";
 ---
 
@@ -7,5 +10,14 @@ import BasePageLayout from "@/layouts/BasePageLayout.astro";
 	description="Главная страница сайта"
 	keywords="Ключевые слова"
 >
+	<Header/>
 	<h1>Контент внутри</h1>
+	<FormInput
+        id="email"
+        type="email"
+        onChange={() => (console.log('Изменился'))}
+        label="Email"
+		client:load
+      />
+	<LinkButton text="Подписаться" href="/" className="contained" client:load/>
 </BasePageLayout>

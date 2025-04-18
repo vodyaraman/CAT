@@ -1,0 +1,83 @@
+// Локальные переменные из глобальных
+$input-color-text: $color-text;
+$input-color-border: $color-border;
+$input-color-bg: $color-bg;
+$input-color-error: $color-accent;
+$input-color-bg-dimmed: $input-color-bg-dimmed;
+
+$form-field-width: 100%;
+$form-field-min-width: 400px;
+$form-field-max-width: 400px;
+
+$input-padding-y: 0.75rem;
+$input-padding-x: 1rem;
+$input-font-size: 1.25rem;
+$input-border-radius: 10px;
+
+$label-font-size: 1.2rem;
+$label-focus-font-size: 0.85rem;
+$label-padding: 1px 5px;
+$label-radius: 11px;
+
+$form-autofill-shadow: 0 0 0 30px $input-color-bg-dimmed inset;
+
+.form-field {
+  position: relative;
+  width: $form-field-width;
+  min-width: $form-field-min-width;
+  max-width: $form-field-max-width;
+
+  &__input {
+    width: 100%;
+    padding: $input-padding-y $input-padding-x;
+    font-size: $input-font-size;
+    background-color: transparent;
+    border: 1px solid $input-color-border;
+    border-radius: $input-border-radius;
+    color: $input-color-text;
+    transition: all 0.3s ease;
+    outline: none;
+
+    &:focus {
+      border-color: $input-color-text;
+    }
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:not(:placeholder-shown) + .form-field__label,
+    &:focus + .form-field__label {
+      top: 0;
+      left: $input-padding-x;
+      font-size: $label-focus-font-size;
+      color: $input-color-text;
+      padding: $label-padding;
+      border-radius: $label-radius;
+      background-color: $input-color-bg;
+    }
+
+    &:autofill {
+      background-color: $input-color-bg-dimmed;
+      box-shadow: $form-autofill-shadow;
+      transition: background-color 0.5s ease-in-out;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    left: $input-padding-x;
+    font-size: $label-font-size;
+    color: $input-color-border;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__error {
+    color: $input-color-error;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+}

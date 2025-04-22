@@ -43,7 +43,7 @@ $burger-item-font-size: 1.5rem;
 
     &__logo {
         @include flexbox(row);
-        gap: 2.5vw;
+        gap: min(2.5vw, 1rem);
         justify-content: flex-start;
         width: auto;
         text-wrap: nowrap;

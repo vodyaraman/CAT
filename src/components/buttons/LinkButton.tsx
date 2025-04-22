@@ -16,7 +16,7 @@ export default function LinkButton({ text, href, className = '' }: LinkButtonPro
   };
 
   return (
-    <a href={href} className={`main-button ${className}`} onClick={handleClick}>
+    <a href={href} aria-label={text} className={`main-button ${className}`} onClick={handleClick}>
       <span className="main-button__text">
         {loading ? <Loader /> : text}
       </span>

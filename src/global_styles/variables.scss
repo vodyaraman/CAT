@@ -1,29 +1,45 @@
+@use 'sass:color';
+
+:root {
+    --section-padding: 0 10vw;
+}
+
 // Цвета — пастельные, сбалансированные
 $color-bg: #fefefe;
 $color-text: #1a1a1a;
 $color-accent: #c1a57b;
-$color-accent-light: #e7dac3;
+$color-accent-gradient: color.adjust($color-accent, $lightness: 5%);
+$color-accent-light: #fafafa;
 $color-border: #202020;
 $color-muted: #999;
 $input-color-bg-dimmed: #cfc4be10;
 
 // Размеры
 $container-max-width: 1250px;
-$section-padding: 80px;
+$section-padding: 0 10vw;
 $gutter: 24px;
 
 // Брейкпоинты
-$breakpoint-xl: 1340px;
-$breakpoint-lg: 1020px;
+$breakpoint-xl: 1920px;
+$breakpoint-lg: 1420px;
 $breakpoint-md: 700px;
 $breakpoint-sm: 480px;
 
+$breakpoint-lg-up: calc($breakpoint-lg + 1px);
+$breakpoint-md-up: calc($breakpoint-md + 1px);
+$breakpoint-sm-up: calc($breakpoint-sm + 1px);
+
+
 // Типографика
 $font-base: 'Helvetica', sans-serif;
-$font-size-base: 16px;
-$font-size-lg: 20px;
-$font-size-sm: 14px;
+$font-tenor: 'Tenor Sans', serif;
+
+$font-size-base: 13px;
+$font-size-lg: 14px;
+$font-size-sm: 11px;
 $line-height-base: 1.5;
+
+$font-heading: $font-tenor;
 
 // z-index
 $z-header: 1000;

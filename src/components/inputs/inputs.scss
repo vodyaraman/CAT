@@ -6,8 +6,8 @@ $input-color-error: $color-accent;
 $input-color-bg-dimmed: $input-color-bg-dimmed;
 
 $form-field-width: 100%;
-$form-field-min-width: 400px;
-$form-field-max-width: 400px;
+$form-field-min-width: unset;
+$form-field-max-width: 600px;
 
 $input-padding-y: 0.75rem;
 $input-padding-x: 1rem;

@@ -10,14 +10,36 @@ import BasePageLayout from "@/layouts/BasePageLayout.astro";
 	description="Главная страница сайта"
 	keywords="Ключевые слова"
 >
-	<Header/>
-	<h1>Контент внутри</h1>
-	<FormInput
-        id="email"
-        type="email"
-        onChange={() => (console.log('Изменился'))}
-        label="Email"
-		client:load
-      />
-	<LinkButton text="Подписаться" href="/" className="contained" client:load/>
+	<Header />
+	<section class="hero section">
+		<h1>Лорем Ipsum</h1>
+		<h2>Лорем Ipsum</h2>
+		<h3>Лорем Ipsum</h3>
+		<p>
+			Lorem текст ipsum пример dolor примерный sit заголовок, consectetur
+			контент adipiscing абзац elit оформление. Sed страница do проект
+			eiusmod дизайн tempor внимание incididunt файл ut блок labore данные
+			et сетка dolore тень magna фон aliqua шрифт. Ut разметка enim
+			структура ad сайт minim макет veniam интерфейс, quis модуль nostrud
+			анимация exercitation кнопка ullamco меню laboris форма nisi
+			глобально ut стили aliquip цвет ex раздел ea контейнер commodo медиа
+			consequat иконка.
+		</p>
+
+		<FormInput
+			id="email"
+			type="email"
+			onChange={() => console.log("Изменился")}
+			label="Email"
+			client:load
+		/>
+		<div class="button-wrapper">
+			<LinkButton
+				text="Подписаться"
+				href="/404"
+				className="contained"
+				client:load
+			/>
+		</div>
+	</section>
 </BasePageLayout>

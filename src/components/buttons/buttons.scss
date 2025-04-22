@@ -6,7 +6,8 @@ $button-text: $color-text;
 $button-font-size: 1.25rem;
 $button-font-weight: 600;
 
-$button-max-width: 500px;
+$button-max-width: 600px;
+$button-min-width: unset;
 
 .main-button {
     position: relative;
@@ -16,11 +17,11 @@ $button-max-width: 500px;
     flex-direction: row;
 
     max-width: $button-max-width;
-    width: auto;
+    min-width: $button-min-width;
+    width: 100%;
 
     background-color: $button-bg;
     color: $button-text;
-    text-shadow: $shadow-soft;
 
     padding: $button-padding-y $button-padding-x;
     border: none;

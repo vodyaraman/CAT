@@ -7,7 +7,9 @@ $card-shadow: $shadow-medium;
 $card-padding: 1rem;
 $card-gap: 0.5rem;
 $card-transition: $transition-fast;
+
 $card-max-width: unset;
+$card-min-width: 200px;
 
 // Локальные переменные для размеров текста
 $card-title-size: 1.5rem;
@@ -20,6 +22,7 @@ $card-description-size: $font-size-base;
   flex-direction: column;
   width: 100%;
   max-width: $card-max-width;
+  min-width: $card-min-width;
   background-color: $card-bg;
   border-radius: $card-radius;
   overflow: hidden;

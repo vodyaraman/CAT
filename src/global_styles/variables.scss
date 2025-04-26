@@ -12,10 +12,15 @@ $color-accent-gradient: color.adjust($color-accent, $lightness: 5%);
 $color-accent-light: #fafafa;
 $color-border: #202020;
 $color-muted: #999;
+$color-error: #f13737;
 $input-color-bg-dimmed: #cfc4be10;
 
 // Размеры
 $container-max-width: 1250px;
+$border-radius: 8px;
+$component-padding: 0.75rem 1.5rem;
+
+// Депрецированные
 $section-padding: 0 10vw;
 $gutter: 24px;
 

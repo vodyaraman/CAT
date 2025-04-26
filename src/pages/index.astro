@@ -1,8 +1,17 @@
 ---
-import LinkButton from "@/components/buttons/LinkButton";
-import Header from "@/components/header/Header.astro";
-import FormInput from "@/components/inputs/FormInput";
+// Основа страницы
 import BasePageLayout from "@/layouts/BasePageLayout.astro";
+import Header from "@/components/header/Header.astro";
+
+// Компоненты страницы
+import { IconButton, LinkButton, MainButton } from "@/components/buttons";
+import { FormExamplePage } from "@/components/form";
+import FormInput from "@/components/inputs/FormInput";
+
+// Контент страница
+import InstIcon from "@/assets/icons/socials/instagram.svg";
+import TgIcon from "@/assets/icons/socials/telegram.svg";
+import YTIcon from "@/assets/icons/socials/youtube.svg";
 ---
 
 <BasePageLayout
@@ -27,19 +36,40 @@ import BasePageLayout from "@/layouts/BasePageLayout.astro";
 		</p>
 
 		<FormInput
-			id="email"
-			type="email"
+			id="adress"
+			type="adress"
 			onChange={() => console.log("Изменился")}
-			label="Email"
+			label="Adress"
 			client:load
 		/>
 		<div class="button-wrapper">
 			<LinkButton
 				text="Перейти"
-				href="/404"
+				href="/second"
 				className="contained"
 				client:load
 			/>
+			<MainButton
+				text="Отключена"
+				onClick={() => {}}
+				disabled={true}
+				loading="false"
+				client:load
+			/>
+			<MainButton
+				text="Нажать"
+				onClick={() => {}}
+				disabled={false}
+				loading="true"
+				client:load
+			/>
+		</div>
+		<FormExamplePage client:load />
+		<div class="button-wrapper">
+			<IconButton src="/favicon.svg" href="/second" className="invert-image" client:load/>
+			<IconButton src={InstIcon.src} href="/second" className="invert-image" client:load/>
+			<IconButton src={TgIcon.src} onClick={() => {}} className="invert-image" client:load/>
+			<IconButton src={YTIcon.src} href="/second" className="invert-image" client:load/>
 		</div>
 	</section>
 </BasePageLayout>

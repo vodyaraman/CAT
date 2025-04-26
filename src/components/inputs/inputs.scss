@@ -1,18 +1,16 @@
-// Локальные переменные из глобальных
 $input-color-text: $color-text;
 $input-color-border: $color-border;
 $input-color-bg: $color-bg;
-$input-color-error: $color-accent;
+$input-color-error: $color-error;
 $input-color-bg-dimmed: $input-color-bg-dimmed;
 
 $form-field-width: 100%;
 $form-field-min-width: unset;
-$form-field-max-width: 600px;
+$form-field-max-width: unset;
 
-$input-padding-y: 0.75rem;
-$input-padding-x: 1rem;
+$input-padding: $component-padding;
 $input-font-size: 1.25rem;
-$input-border-radius: 10px;
+$input-border-radius: $border-radius;
 
 $label-font-size: 1.2rem;
 $label-focus-font-size: 0.85rem;
@@ -29,7 +27,7 @@ $form-autofill-shadow: 0 0 0 30px $input-color-bg-dimmed inset;
 
   &__input {
     width: 100%;
-    padding: $input-padding-y $input-padding-x;
+    padding: $input-padding;
     font-size: $input-font-size;
     background-color: transparent;
     border: 1px solid $input-color-border;
@@ -49,7 +47,7 @@ $form-autofill-shadow: 0 0 0 30px $input-color-bg-dimmed inset;
     &:not(:placeholder-shown) + .form-field__label,
     &:focus + .form-field__label {
       top: 0;
-      left: $input-padding-x;
+      left: 1rem;
       font-size: $label-focus-font-size;
       color: $input-color-text;
       padding: $label-padding;
@@ -67,7 +65,7 @@ $form-autofill-shadow: 0 0 0 30px $input-color-bg-dimmed inset;
   &__label {
     position: absolute;
     top: 50%;
-    left: $input-padding-x;
+    left: 1rem;
     font-size: $label-font-size;
     color: $input-color-border;
     pointer-events: none;

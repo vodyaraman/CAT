@@ -99,6 +99,10 @@ ul, li {
   display: none !important;
 }
 
+.invert-image img{
+  filter: invert(1);
+}
+
 .button-wrapper {
   display: flex;
   width: 100%;

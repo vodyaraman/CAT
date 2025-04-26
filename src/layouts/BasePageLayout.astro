@@ -3,8 +3,6 @@ import "@/global_styles/global.scss";
 import "@/global_styles/fonts.scss";
 import "@/global_styles/responsive.scss";
 
-import { ClientRouter } from "astro:transitions";
-
 import AnimationManager from "./AnimationManagerLayout";
 
 import LoadingScreen from "@/components/loading_screen/index.astro";
@@ -19,8 +17,6 @@ const {
 
 <html lang={locale}>
 	<head>
-		<ClientRouter />
-
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 

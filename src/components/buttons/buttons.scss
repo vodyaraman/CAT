@@ -45,6 +45,7 @@ $button-min-width: unset;
     }
 
     &.icon-button {
+        background-color: transparent;
         width: calc($button-font-size * 2.5);
         height: calc($button-font-size * 2.5);
     }

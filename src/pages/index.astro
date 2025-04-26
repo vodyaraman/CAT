@@ -12,6 +12,8 @@ import FormInput from "@/components/inputs/FormInput";
 import InstIcon from "@/assets/icons/socials/instagram.svg";
 import TgIcon from "@/assets/icons/socials/telegram.svg";
 import YTIcon from "@/assets/icons/socials/youtube.svg";
+import Card from "@/components/cards/Card";
+import Skeleton from "@/components/skeleton/Skeleton";
 ---
 
 <BasePageLayout
@@ -66,10 +68,64 @@ import YTIcon from "@/assets/icons/socials/youtube.svg";
 		</div>
 		<FormExamplePage client:load />
 		<div class="button-wrapper">
-			<IconButton src="/favicon.svg" href="/second" className="invert-image" client:load/>
-			<IconButton src={InstIcon.src} href="/second" className="invert-image" client:load/>
-			<IconButton src={TgIcon.src} onClick={() => {}} className="invert-image" client:load/>
-			<IconButton src={YTIcon.src} href="/second" className="invert-image" client:load/>
+			<Card
+				title="Кожаный рюкзак"
+				description="Ручная работа из натуральной кожи."
+				price="7 900 ₽"
+				onAction={() => console.log("Добавить в корзину")}
+				actionText="Добавить"
+			/>
+			<Card
+				title="Кожаный штурвал"
+				description="Ручная работа из натуральной кожи."
+				price="12 900 ₽"
+				onAction={() => console.log("Добавить в корзину")}
+				actionText="Использовать"
+			/>
+			<Card
+				title="Мармеладный мишка"
+				description="Ручная работа из натурального человеческого жира."
+				price="900 ₽"
+				onAction={() => console.log("Добавить в корзину")}
+				actionText="Покушать"
+			/>
+			<Card
+				title="Сосновая шишка"
+				description="Работа природы из натуральной древесины."
+				price="9000 ₽"
+				onAction={() => console.log("Добавить в корзину")}
+				actionText="Покушать"
+			/>
+		</div>
+		<div class="button-wrapper">
+			<Skeleton/>
+			<Skeleton>
+				<Skeleton type="title"/>
+				<Skeleton type="text"/>
+				<Skeleton type="text"/>
+				<Skeleton type="text"/>
+			</Skeleton>
+		</div>
+		<div class="button-wrapper">
+			<IconButton
+				src="/favicon.svg"
+				href="/second"
+				className="invert-image"
+				client:load
+			/>
+			<IconButton src={InstIcon.src} href="/second" client:load />
+			<IconButton
+				src={TgIcon.src}
+				onClick={() => {}}
+				className="invert-image"
+				client:load
+			/>
+			<IconButton
+				src={YTIcon.src}
+				href="/second"
+				className="invert-image"
+				client:load
+			/>
 		</div>
 	</section>
 </BasePageLayout>

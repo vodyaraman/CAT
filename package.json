@@ -17,11 +17,24 @@
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "astro": "^5.7.3",
+    "clsx": "^2.1.1",
     "gsap": "^3.12.7",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "sass": "^1.86.3",
     "swup": "^4.8.1",
     "three": "^0.175.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-image": "^3.0.3",
+    "svgo": "^3.3.2"
+  },
+  "rules": {
+    "react/jsx-wrap-multilines": [
+      "off"
+    ]
+  },
+  "prettier": {
+    "arrowParens": "avoid"
   }
 }

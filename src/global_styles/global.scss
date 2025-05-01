@@ -14,20 +14,24 @@
 }
 
 /* BASE HTML */
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
-  scroll-behavior: auto;
-  font-family: $font-base;
+
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  font-family: $font-base;
+  font-size: $font-size-base;
   background-color: #fff;
   color: #000;
-  overscroll-behavior: none;
 }
 
-html, body {
-  font-size: $font-size-base;
+html,
+body {
 
   @media (min-width: $breakpoint-xl) {
     font-size: 16px;
@@ -47,7 +51,11 @@ html, body {
 }
 
 /* TYPOGRAPHY */
-h1, h2, h3, h4, p {
+h1,
+h2,
+h3,
+h4,
+p {
   font-family: $font-tenor;
 }
 
@@ -68,14 +76,20 @@ p {
 }
 
 /* IMAGES & MEDIA */
-img, video, canvas, svg {
+img,
+video,
+canvas,
+svg {
   display: block;
   width: 100%;
   height: auto;
 }
 
 /* FORM ELEMENTS */
-input, textarea, button, select {
+input,
+textarea,
+button,
+select {
   font: inherit;
   color: inherit;
   background: none;
@@ -90,7 +104,8 @@ a {
 }
 
 /* LIST ITEMS */
-ul, li {
+ul,
+li {
   list-style: none;
 }
 
@@ -99,13 +114,8 @@ ul, li {
   display: none !important;
 }
 
-.invert-image img{
+.invert-image img {
   filter: invert(1);
-}
-
-.button-wrapper {
-  display: flex;
-  width: 100%;
 }
 
 .section {

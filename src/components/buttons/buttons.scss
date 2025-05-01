@@ -1,83 +1,59 @@
-$button-radius: $border-radius;
-$button-padding: 0.75rem 1.5rem;
-$button-bg: $color-bg;
-$button-text: $color-text;
 $button-font-size: 1.25rem;
-$button-font-weight: 600;
+$button-color: rgb(216, 194, 154);
 
-$button-max-width: unset;
-$button-min-width: unset;
+$button-min-width: 250px;
+$button-max-width: 250px;
 
 .main-button {
-    position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
 
+    position: relative;
     max-width: $button-max-width;
     min-width: $button-min-width;
-    width: 100%;
-    min-height: calc($button-font-size );
+    padding: 10px 15px;
 
-    background-color: $button-bg;
-    color: $button-text;
-
-    padding: $button-padding;
+    background-color: $button-color;
+    color: white;
+    text-align: center;
     border: none;
-    border-radius: $button-radius;
+    border-radius: 10px;
+
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 
     &.outlined {
-        border: 1px solid $color-accent;
+        border: 1px solid inherit;
         background-color: transparent;
     }
 
-    &.contained {
-        background-color: $color-accent;
-        color: $color-bg;
+    &.ico-btn {
+        min-width: unset;
+        display: block;
+        width: fit-content;
     }
 
     &.disabled {
-        background-color: $color-muted;
+        background-color: rgb(174, 174, 174);
         cursor: not-allowed;
     }
 
-    &.icon-button {
-        background-color: transparent;
-        width: calc($button-font-size * 2.5);
-        height: calc($button-font-size * 2.5);
-    }
-
     &__text {
-        color: inherit;
         font-size: $button-font-size;
-        font-weight: $button-font-size;
-        text-shadow: $shadow-soft;
-        scale: 1;
-        user-select: none;
-        pointer-events: none;
-        transition: scale 0.25s ease;
-        will-change: scale;
-        pointer-events: none;
-    }
+        text-shadow: $shadow-low;
 
-    &__image {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: fill;
-        pointer-events: none;
-        transition: scale 0.25s ease;
-        will-change: scale;
         user-select: none;
     }
 
-    &:hover {
-        .main-button__text, .main-button__image {
-            scale: 1.05;
+    &:not(:disabled):hover {
+        background-color: #fff;
+        color: $button-color;
+        outline: 1px solid $button-color;
+
+        svg {
+            color: $button-color;
         }
     }
 

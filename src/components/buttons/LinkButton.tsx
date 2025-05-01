@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Loader from '@/components/icons/Loader';
 import './buttons.scss';
+import Icon from '../icons/Icon';
+import clsx from 'clsx';
 
 /**
  * Пропсы для компонента LinkButton
@@ -9,7 +11,7 @@ interface LinkButtonProps {
   /**
    * Текст внутри кнопки-ссылки
    */
-  text: string;
+  text?: string;
 
   /**
    * Адрес перехода при клике
@@ -21,6 +23,12 @@ interface LinkButtonProps {
    * @default ''
    */
   className?: string;
+
+  /**
+     * Иконка (React.component)
+     * @default ''
+     */
+  icon?: string;
 }
 
 /**
@@ -31,7 +39,7 @@ interface LinkButtonProps {
  * @param href — адрес ссылки
  * @param className — дополнительный CSS-класс (outlined/contained)
  */
-export default function LinkButton({ text, href, className = '' }: LinkButtonProps) {
+const LinkButton = ({ text = '', href, className = 'contained', icon = '' }: LinkButtonProps) => {
   /**
    * Флаг состояния загрузки при клике
    */
@@ -50,12 +58,15 @@ export default function LinkButton({ text, href, className = '' }: LinkButtonPro
     <a
       href={href}
       aria-label={text}
-      className={`main-button ${className}`}
+      className={clsx('main-button', className, !text && 'ico-btn')}
       onClick={handleClick}
     >
+      {icon && <Icon id={icon} />}
       <span className="main-button__text">
         {loading ? <Loader /> : text}
       </span>
     </a>
   );
 }
+
+export default LinkButton;

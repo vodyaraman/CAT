@@ -1,16 +1,19 @@
 import { type FC } from 'react';
+import './buttons.scss';
 import Loader from '@/components/icons/Loader';
+import Icon from '../icons/Icon';
+import clsx from 'clsx';
 
 interface MainButtonProps {
     /**
      * Текст внутри кнопки
      */
-    text: string;
+    text?: string;
 
     /**
      * Обработчик клика по кнопке
      */
-    onClick: () => void;
+    onClick?: () => void;
 
     /**
      * Дополнительный класс кнопки: 'outlined' или 'contained'
@@ -22,19 +25,25 @@ interface MainButtonProps {
      * Состояние загрузки: отображает Loader вместо текста
      * @default false
      */
-    loading?: boolean | string;
+    loading?: boolean;
 
     /**
      * Делает кнопку неактивной
      * @default false
      */
-    disabled?: boolean | string;
+    disabled?: boolean;
 
     /**
      * Тип кнопки (button | submit | reset)
      * @default 'button'
      */
     type?: 'button' | 'submit' | 'reset';
+
+    /**
+     * Иконка (React.component)
+     * @default ''
+     */
+    icon?: string;
 }
 
 /**
@@ -49,35 +58,29 @@ interface MainButtonProps {
  * @param type — тип HTML-кнопки ('button' | 'submit' | 'reset'), по умолчанию 'button'
  */
 const MainButton: FC<MainButtonProps> = ({
-    text,
-    onClick,
+    text = '',
+    onClick = () => { },
     className = 'contained',
     loading = false,
     disabled = false,
     type = 'button',
+    icon = '',
 }) => {
-    const isDisabled = disabled === true || disabled === 'true';
-    const isLoading = loading === true || loading === 'true';
-
-    const buttonClass = [
-        'main-button',
-        className,
-        (isDisabled || isLoading) ? 'disabled' : ''
-    ].filter(Boolean).join(' ');
 
     const handleClick = () => {
-        if (isDisabled || isLoading) return;
+        if (disabled || loading) return;
         if (onClick) onClick();
     };
 
     return (
         <button
-            className={buttonClass}
+            className={clsx('main-button', className, (disabled || loading) ? 'disabled' : '', !text && 'ico-btn')}
             onClick={handleClick}
-            disabled={isDisabled || isLoading}
+            disabled={disabled || loading}
             type={type}
         >
-            <span className="main-button__text">{isLoading ? <Loader />: text }</span>
+            {icon && <Icon id={icon} />}
+            <span className="main-button__text">{loading ? <Loader /> : text}</span>
         </button>
     );
 };

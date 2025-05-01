@@ -1,5 +1,2 @@
-import IconButton from "./IconButton";
-import LinkButton from "./LinkButton";
-import MainButton from "./MainButton";
-
-export {MainButton, LinkButton, IconButton};
+export { default as LinkButton } from "./LinkButton";
+export { default as MainButton } from "./MainButton";

@@ -1,8 +1,8 @@
 ---
-import LinkButton from "@/components/buttons/LinkButton";
-import Header from "@/components/header/Header.astro";
+import LinkButton from '@/components/buttons/LinkButton';
+import Header from '@/components/header/Header.astro';
 
-import BasePageLayout from "@/layouts/BasePageLayout.astro";
+import BasePageLayout from '@/layouts/BasePageLayout.astro';
 ---
 
 <BasePageLayout
@@ -14,18 +14,8 @@ import BasePageLayout from "@/layouts/BasePageLayout.astro";
 	<section class="hero section">
 		<h1>Hello World</h1>
 		<div class="button-wrapper">
-			<LinkButton
-				text="Вернуться"
-				href="/"
-				className="contained"
-				client:load
-			/>
-			<LinkButton
-				text="404 тест"
-				href="/404"
-				className="contained"
-				client:load
-			/>
+			<LinkButton text="Вернуться" href="/" className="contained" client:load />
+			<LinkButton text="404 тест" href="/404" className="contained" client:load />
 		</div>
 	</section>
 </BasePageLayout>

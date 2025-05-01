@@ -68,7 +68,7 @@ const Form: FC<FormProps> = ({
             console.log('Код @/components/form/Form.js (отладка): форма отправлена с данными', JSON.stringify(data, null, 2));
         } catch (error) {
             console.log('Код @/components/form/Form.js (отладка): форма НЕ отправлена с данными', JSON.stringify(data, null, 2), error);
-        } finally { 
+        } finally {
             setLoading(false);
         }
     };

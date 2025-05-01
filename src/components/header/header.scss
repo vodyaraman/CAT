@@ -1,6 +1,6 @@
 // Настройка Header Для проектов
 // Цвета шапки
-$header-bg: linear-gradient(to right,  $color-accent 0%, $color-accent-gradient 50%, $color-accent 100%);
+$header-bg: linear-gradient(to right, $color-accent 0%, $color-accent-gradient 50%, $color-accent 100%);
 $header-logo-text: $color-bg;
 $header-link: $color-accent-light;
 $header-text-hover: $color-bg;
@@ -9,7 +9,7 @@ $header-text-hover: $color-bg;
 $header-height: 60px;
 $header-top: 0;
 $header-padding-x: var(--section-padding);
-$header-radius: $radius-lg;
+$header-radius: $radius-l;
 $header-font-weight: 400;
 $header-text-size: 1.25rem;
 $burger-font-size: 1rem;
@@ -94,7 +94,7 @@ $burger-item-font-size: 1.5rem;
             @include transition(color, $transition-slow);
 
             &:hover {
-                filter: brightness(1.2);    
+                filter: brightness(1.2);
             }
         }
     }

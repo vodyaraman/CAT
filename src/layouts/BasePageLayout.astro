@@ -1,17 +1,18 @@
 ---
-import "@/global_styles/global.scss";
-import "@/global_styles/fonts.scss";
-import "@/global_styles/responsive.scss";
+import '@/global_styles/global.scss';
+import '@/global_styles/fonts.scss';
+import '@/global_styles/responsive.scss';
 
-import AnimationManager from "./AnimationManagerLayout";
+import AnimationManager from './AnimationManagerLayout';
 
-import LoadingScreen from "@/components/loading_screen/index.astro";
+import LoadingScreen from '@/components/loading_screen/index.astro';
+import SpriteProvider from './SpriteProvider.astro';
 
 const {
-	title = "Шаблонная страница",
-	description = "Описание страницы",
-	keywords = "Ключевые слова на странице",
-	locale = "ru",
+	title = 'Шаблонная страница',
+	description = 'Описание страницы',
+	keywords = 'Ключевые слова на странице',
+	locale = 'ru',
 } = Astro.props;
 ---
 
@@ -26,10 +27,7 @@ const {
 		<meta name="keywords" content={keywords} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta
-			property="og:locale"
-			content={locale === "ru" ? "ru_RU" : "en_US"}
-		/>
+		<meta property="og:locale" content={locale === 'ru' ? 'ru_RU' : 'en_US'} />
 		<meta property="og:image" content="/seo/og-image.png" />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
@@ -38,6 +36,7 @@ const {
 	</head>
 	<body>
 		<LoadingScreen />
+		<SpriteProvider />
 		<main transition:animate="slide">
 			<slot />
 			<AnimationManager client:only="react" />

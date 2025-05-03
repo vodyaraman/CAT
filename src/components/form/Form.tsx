@@ -1,38 +1,7 @@
-import { type FC, type ReactNode, useState } from 'react';
+import { type FC, useState } from 'react';
 import MainButton from '@/components/buttons/MainButton';
 import './Form.scss';
-
-/**
- * Пропсы для компонента Form
- */
-interface FormProps {
-    /**
-     * Заголовок формы
-     */
-    title: string;
-
-    /**
-     * Дочерние элементы формы (поля ввода)
-     */
-    children: ReactNode;
-
-    /**
-     * Внешняя функция отправки после проверки данных
-     */
-    onSubmit: (formData: Record<string, any>) => Promise<void> | void;
-
-    /**
-     * Текст кнопки отправки
-     * @default "Отправить"
-     */
-    submitText?: string;
-
-    /**
-     * Дополнительный класс для формы
-     * @default ''
-     */
-    className?: string;
-}
+import type { FormProps } from '@/types/interfaces';
 
 /**
  * Компонент формы с заголовком, полями и встроенной кнопкой отправки.

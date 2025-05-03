@@ -1,52 +1,7 @@
-import { type FC, type ReactNode } from 'react';
+import { type FC } from 'react';
 import MainButton from '@/components/buttons/MainButton';
 import './cards.scss';
-
-/**
- * Пропсы для компонента Card
- */
-interface CardProps {
-    /**
-     * Путь к изображению товара
-     */
-    image?: string;
-
-    /**
-     * Название товара
-     */
-    title?: string;
-
-    /**
-     * Короткое описание товара
-     */
-    description?: string;
-
-    /**
-     * Цена товара
-     */
-    price?: string;
-
-    /**
-     * Обработчик клика по кнопке
-     */
-    onAction?: () => void;
-
-    /**
-     * Текст кнопки действия
-     * @default 'В корзину'
-     */
-    actionText?: string;
-
-    /**
-     * Дополнительный контент внутри карточки
-     */
-    children?: ReactNode;
-
-    /**
-     * Текстура заднего фона карточки
-     */
-    backgroundSrc?: string;
-}
+import type { CardProps } from '@/types/interfaces';
 
 /**
  * Карточка товара.

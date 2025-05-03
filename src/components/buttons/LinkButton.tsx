@@ -1,35 +1,9 @@
-import { useState } from 'react';
+import { useState, type FC } from 'react';
 import Loader from '@/components/icons/Loader';
 import './buttons.scss';
 import Icon from '../icons/Icon';
 import clsx from 'clsx';
-
-/**
- * Пропсы для компонента LinkButton
- */
-interface LinkButtonProps {
-  /**
-   * Текст внутри кнопки-ссылки
-   */
-  text?: string;
-
-  /**
-   * Адрес перехода при клике
-   */
-  href: string;
-
-  /**
-   * Дополнительный класс для кнопки (например, 'contained', 'outlined')
-   * @default ''
-   */
-  className?: string;
-
-  /**
-     * Иконка (React.component)
-     * @default ''
-     */
-  icon?: string;
-}
+import type { LinkButtonProps } from '@/types/interfaces';
 
 /**
  * Кнопка-ссылка с состоянием загрузки.
@@ -39,17 +13,9 @@ interface LinkButtonProps {
  * @param href — адрес ссылки
  * @param className — дополнительный CSS-класс (outlined/contained)
  */
-const LinkButton = ({ text = '', href, className = 'contained', icon = '' }: LinkButtonProps) => {
-  /**
-   * Флаг состояния загрузки при клике
-   */
+const LinkButton: FC<LinkButtonProps> = ({ text = '', href, className = 'contained', icon = '' }) => {
   const [loading, setLoading] = useState(false);
 
-  /**
-   * Обработчик клика по ссылке
-   *
-   * @param e — событие клика
-   */
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     setLoading(true);
   };

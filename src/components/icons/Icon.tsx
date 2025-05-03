@@ -1,10 +1,6 @@
 import clsx from 'clsx';
 import './Icon.scss';
-
-interface IconProps {
-    id: string;
-    className?: string;
-}
+import type { IconProps } from '@/types/interfaces';
 
 export default function Icon({ id, className }: IconProps) {
     return (

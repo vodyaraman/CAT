@@ -1,45 +1,6 @@
 import React from 'react';
 import './inputs.scss';
-
-/**
- * Пропсы для компонента FormInput
- */
-interface FormInputProps {
-  /**
-   * Уникальный идентификатор поля ввода
-   */
-  id: string;
-
-  /**
-   * Тип поля ввода (например, 'text', 'email', 'password')
-   */
-  type: string;
-
-  /**
-   * Текст метки для поля
-   */
-  label: string;
-
-  /**
-   * Контролируемое значение поля
-   */
-  value?: string;
-
-  /**
-   * Неконтролируемое значение по умолчанию
-   */
-  defaultValue?: string;
-
-  /**
-   * Сообщение об ошибке для отображения
-   */
-  error?: string;
-
-  /**
-   * Обработчик изменения значения поля
-   */
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
+import type { FormInputProps } from '@/types/interfaces';
 
 /**
  * Переиспользуемое поле ввода с меткой и отображением ошибки.

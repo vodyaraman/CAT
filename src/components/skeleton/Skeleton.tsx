@@ -1,26 +1,6 @@
-import { type FC, type ReactNode } from 'react';
+import { type FC } from 'react';
 import './skeleton.scss';
-
-/**
- * Пропсы для компонента Skeleton
- */
-interface SkeletonProps {
-  /**
-   * Визуальный тип скелетона:
-   * 
-   * - 'block' — базовый прямоугольник (по умолчанию).
-   * - 'title' — заглушка для заголовка (шире и выше текста).
-   * - 'text' — тонкая полоска для имитации текстовой строки.
-   */
-  type?: 'block' | 'title' | 'text';
-
-  /**
-   * Вложенные элементы Skeleton.
-   * 
-   * Используется для создания сложной структуры скелетона.
-   */
-  children?: ReactNode;
-}
+import type { SkeletonProps } from '@/types/interfaces';
 
 /**
  * Компонент Skeleton

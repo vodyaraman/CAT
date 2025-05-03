@@ -3,48 +3,7 @@ import './buttons.scss';
 import Loader from '@/components/icons/Loader';
 import Icon from '../icons/Icon';
 import clsx from 'clsx';
-
-interface MainButtonProps {
-    /**
-     * Текст внутри кнопки
-     */
-    text?: string;
-
-    /**
-     * Обработчик клика по кнопке
-     */
-    onClick?: () => void;
-
-    /**
-     * Дополнительный класс кнопки: 'outlined' или 'contained'
-     * @default 'contained'
-     */
-    className?: 'outlined' | 'contained';
-
-    /**
-     * Состояние загрузки: отображает Loader вместо текста
-     * @default false
-     */
-    loading?: boolean;
-
-    /**
-     * Делает кнопку неактивной
-     * @default false
-     */
-    disabled?: boolean;
-
-    /**
-     * Тип кнопки (button | submit | reset)
-     * @default 'button'
-     */
-    type?: 'button' | 'submit' | 'reset';
-
-    /**
-     * Иконка (React.component)
-     * @default ''
-     */
-    icon?: string;
-}
+import type { MainButtonProps } from '@/types/interfaces';
 
 /**
  * Переиспользуемая кнопка для глобального шаблона.

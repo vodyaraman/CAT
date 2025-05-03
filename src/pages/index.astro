@@ -37,7 +37,7 @@ import Skeleton from '@/components/skeleton/Skeleton';
 		/>
 
 		<LinkButton s text="Перейти" href="/second" client:load />
-		<LinkButton m text="Перейти" href="/second" className='outlined' client:load/>
+		<LinkButton m loader text="Перейти" href="/second" className='outlined' client:load/>
 		<LinkButton m text="Корзина" icon="cart" href='/' client:load />
 		<MainButton text="Отключена" disabled={true} loading={false} client:load />
 		<MainButton text="Нажать" loading={true} client:load />

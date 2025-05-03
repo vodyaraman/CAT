@@ -19,9 +19,11 @@ export interface SizeFlags {
  * @property {string} [text] — Текст внутри кнопки-ссылки (по умолчанию: '')
  * @property {string} [className] — Дополнительный класс для кнопки (например, 'contained', 'outlined') (по умолчанию: '')
  * @property {string} [icon] — Иконка (строка, имя иконки или путь к изображению) (по умолчанию: '')
+ * @property {boolean} [loader] - вызывается ли loader после нажатия
  */
 export interface LinkButtonProps extends BaseButtonProps {
     href: string;
+    loader?: boolean;
 }
 
 

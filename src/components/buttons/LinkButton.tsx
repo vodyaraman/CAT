@@ -14,10 +14,11 @@ import { getButtonSize } from './sizeUtil';
  * @param href — адрес ссылки
  * @param className — дополнительный CSS-класс (outlined/contained)
  */
-const LinkButton: FC<LinkButtonProps> = ({ text = '', href, className = 'contained', icon = '', s, m, l }) => {
+const LinkButton: FC<LinkButtonProps> = ({ text = '', href, className = 'contained', icon = '', loader = false, s, m, l }) => {
   const [loading, setLoading] = useState(false);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if(!loader) return;
     setLoading(true);
   };
 

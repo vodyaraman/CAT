@@ -38,7 +38,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ links }) => {
   return (
     <>
       <aside className="header__burger">
-        МЕНЮ
+        <span>МЕНЮ</span>
         <img src={BurgerIcon.src} alt="Меню" className="header__burger icon" />
       </aside>
 

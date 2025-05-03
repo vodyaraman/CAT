@@ -4,20 +4,21 @@
     --section-padding: 0 10vw;
 }
 
-// Цвета — пастельные, сбалансированные
-$color-bg: #fefefe;
+// Цвета
+$color-bg: #eff1ea;
 $color-text: #1a1a1a;
-$color-accent: #c1a57b;
+$color-accent: #84bbd1;
 $color-accent-gradient: color.adjust($color-accent, $lightness: 5%);
-$color-accent-light: #fafafa;
+$color-accent-hover: color.adjust($color-accent, $lightness: 10%);
+$color-accent-text: #fafafa;
 $color-border: #202020;
-$color-muted: #999;
+$color-muted: #AEAEAE;
 $color-error: #f13737;
 $input-color-bg-dimmed: #cfc4be10;
 
 // Размеры
 $container-max-width: 1250px;
-$border-radius: 8px;
+$border-radius: 12px;
 $component-padding: 0.75rem 1.5rem;
 
 // Депрецированные

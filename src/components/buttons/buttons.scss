@@ -1,5 +1,9 @@
 $button-font-size: 1.25rem;
-$button-color: rgb(216, 194, 154);
+$button-border-radius: $border-radius;
+
+$button-color: $color-accent-text;
+$button-bg-color: $color-accent;
+$button-bg-color-hovered: $color-accent-hover;
 
 $button-min-width: 250px;
 $button-max-width: 250px;
@@ -15,18 +19,32 @@ $button-max-width: 250px;
     min-width: $button-min-width;
     padding: 10px 15px;
 
-    background-color: $button-color;
-    color: white;
+    background-color: $button-bg-color;
+    color: $button-color;
     text-align: center;
-    border: none;
-    border-radius: 10px;
+    border-radius: $button-border-radius;
 
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 
+    &:not(:disabled):hover {
+        background-color: $button-bg-color-hovered;
+        color: $button-color;
+        outline: 1px solid $button-color;
+
+        svg {
+            color: $button-color;
+        }
+    }
+
     &.outlined {
-        border: 1px solid inherit;
+        border: 1px solid $button-bg-color;
         background-color: transparent;
+        color: $color-accent;
+
+        &:hover {
+            background-color: $button-bg-color;
+        }
     }
 
     &.ico-btn {
@@ -36,7 +54,7 @@ $button-max-width: 250px;
     }
 
     &.disabled {
-        background-color: rgb(174, 174, 174);
+        background-color: $color-muted;
         cursor: not-allowed;
     }
 
@@ -45,16 +63,6 @@ $button-max-width: 250px;
         text-shadow: $shadow-low;
 
         user-select: none;
-    }
-
-    &:not(:disabled):hover {
-        background-color: #fff;
-        color: $button-color;
-        outline: 1px solid $button-color;
-
-        svg {
-            color: $button-color;
-        }
     }
 
     @media (max-width: $breakpoint-md) {

@@ -11,7 +11,6 @@ import FormInput from '@/components/inputs/FormInput';
 // Контент страница
 import Card from '@/components/cards/Card';
 import Skeleton from '@/components/skeleton/Skeleton';
-import Icon from '@/components/icons/Icon';
 ---
 
 <BasePageLayout title="Главная" description="Главная страница сайта" keywords="Ключевые слова">
@@ -38,6 +37,7 @@ import Icon from '@/components/icons/Icon';
 		/>
 
 		<LinkButton text="Перейти" href="/second" client:load />
+		<LinkButton text="Перейти" href="/second" className='outlined' client:load />
 		<MainButton text="Корзина" icon="cart" client:load />
 		<MainButton text="Отключена" disabled={true} loading={false} client:load />
 		<MainButton text="Нажать" loading={true} client:load />

@@ -2,7 +2,7 @@
 // Цвета шапки
 $header-bg: linear-gradient(to right, $color-accent 0%, $color-accent-gradient 50%, $color-accent 100%);
 $header-logo-text: $color-bg;
-$header-link: $color-accent-light;
+$header-link: $color-accent-text;
 $header-text-hover: $color-bg;
 
 // Отрисовка шапки
@@ -20,7 +20,7 @@ $justify-burger-menu: flex-end;
 // Цвета бургер меню
 $burger-bg: $color-bg;
 $burger-hover-text: $color-border;
-$burger-hover-bg: $color-accent-light;
+$burger-hover-bg: $color-accent-text;
 $burger-text: $color-text;
 $burger-text-soft: $color-border;
 $burger-text-hover: $color-accent;

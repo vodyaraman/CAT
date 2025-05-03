@@ -4,6 +4,7 @@ import './buttons.scss';
 import Icon from '../icons/Icon';
 import clsx from 'clsx';
 import type { LinkButtonProps } from '@/types/interfaces';
+import { getButtonSize } from './sizeUtil';
 
 /**
  * Кнопка-ссылка с состоянием загрузки.
@@ -13,23 +14,31 @@ import type { LinkButtonProps } from '@/types/interfaces';
  * @param href — адрес ссылки
  * @param className — дополнительный CSS-класс (outlined/contained)
  */
-const LinkButton: FC<LinkButtonProps> = ({ text = '', href, className = 'contained', icon = '' }) => {
+const LinkButton: FC<LinkButtonProps> = ({ text = '', href, className = 'contained', icon = '', s, m, l }) => {
   const [loading, setLoading] = useState(false);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     setLoading(true);
   };
 
+  const size = getButtonSize({ s, m, l });
+
   return (
     <a
       href={href}
       aria-label={text}
-      className={clsx('main-button', className, !text && 'ico-btn')}
+      className={clsx('main-button', size, className, !text && 'icon-btn')}
       onClick={handleClick}
     >
-      {icon && <Icon id={icon} />}
       <span className="main-button__text">
-        {loading ? <Loader /> : text}
+        {loading ? (
+          <Loader />
+        ) : (
+          <>
+            {icon && <Icon id={icon} />}
+            {text}
+          </>
+        )}
       </span>
     </a>
   );

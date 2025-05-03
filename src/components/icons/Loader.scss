@@ -1,7 +1,7 @@
 .main-button__loader {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
+    display: flex;
+    width: 1.3em;
+    height: 1.3em;
     border: 2px solid transparent;
     border-top-color: $color-text;
     border-radius: 50%;

@@ -4,6 +4,7 @@ import Loader from '@/components/icons/Loader';
 import Icon from '../icons/Icon';
 import clsx from 'clsx';
 import type { MainButtonProps } from '@/types/interfaces';
+import { getButtonSize } from './sizeUtil';
 
 /**
  * Переиспользуемая кнопка для глобального шаблона.
@@ -24,6 +25,7 @@ const MainButton: FC<MainButtonProps> = ({
     disabled = false,
     type = 'button',
     icon = '',
+    s, m, l
 }) => {
 
     const handleClick = () => {
@@ -31,15 +33,25 @@ const MainButton: FC<MainButtonProps> = ({
         if (onClick) onClick();
     };
 
+    const size = getButtonSize({ s, m, l });
+
     return (
         <button
-            className={clsx('main-button', className, (disabled || loading) ? 'disabled' : '', !text && 'ico-btn')}
+            className={clsx('main-button', size, className, (disabled || loading) ? 'disabled' : '', !text && 'icon-btn')}
             onClick={handleClick}
             disabled={disabled || loading}
             type={type}
         >
-            {icon && <Icon id={icon} />}
-            <span className="main-button__text">{loading ? <Loader /> : text}</span>
+            <span className="main-button__text">
+                {loading ? (
+                    <Loader />
+                ) : (
+                    <>
+                        {icon && <Icon id={icon} />}
+                        {text}
+                    </>
+                )}
+            </span>
         </button>
     );
 };

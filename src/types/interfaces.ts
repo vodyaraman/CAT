@@ -1,7 +1,15 @@
-interface BaseButtonProps {
+interface BaseButtonProps extends SizeFlags {
     text?: string;
     className?: string;
     icon?: string;
+}
+
+export type ButtonSize = 's' | 'm' | 'l';
+
+export interface SizeFlags {
+    s?: boolean;
+    m?: boolean;
+    l?: boolean;
 }
 
 /**

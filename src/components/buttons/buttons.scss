@@ -5,9 +5,6 @@ $button-color: $color-accent-text;
 $button-bg-color: $color-accent;
 $button-bg-color-hovered: $color-accent-hover;
 
-$button-min-width: 250px;
-$button-max-width: 250px;
-
 .main-button {
     display: flex;
     align-items: center;
@@ -15,8 +12,6 @@ $button-max-width: 250px;
     gap: 1rem;
 
     position: relative;
-    max-width: $button-max-width;
-    min-width: $button-min-width;
     padding: 10px 15px;
 
     background-color: $button-bg-color;
@@ -30,11 +25,22 @@ $button-max-width: 250px;
     &:not(:disabled):hover {
         background-color: $button-bg-color-hovered;
         color: $button-color;
-        outline: 1px solid $button-color;
 
         svg {
             color: $button-color;
         }
+    }
+
+    &--s {
+        max-width: fit-content;
+    }
+
+    &--m {
+        max-width: 300px;
+    }
+
+    &--l {
+        width: 100%;
     }
 
     &.outlined {
@@ -47,10 +53,10 @@ $button-max-width: 250px;
         }
     }
 
-    &.ico-btn {
+    &.icon-btn {
         min-width: unset;
-        display: block;
         width: fit-content;
+        display: inline-block;
     }
 
     &.disabled {
@@ -59,10 +65,20 @@ $button-max-width: 250px;
     }
 
     &__text {
+        display: inline-flex;
+        
         font-size: $button-font-size;
         text-shadow: $shadow-low;
+        gap: 5px;
 
         user-select: none;
+
+        line-height: 1.3;
+
+        svg {
+            width: 1.3em;
+            height: 1.3em;
+        }
     }
 
     @media (max-width: $breakpoint-md) {

@@ -36,14 +36,15 @@ import Skeleton from '@/components/skeleton/Skeleton';
 			client:load
 		/>
 
-		<LinkButton text="Перейти" href="/second" client:load />
-		<LinkButton text="Перейти" href="/second" className='outlined' client:load />
-		<MainButton text="Корзина" icon="cart" client:load />
+		<LinkButton s text="Перейти" href="/second" client:load />
+		<LinkButton m text="Перейти" href="/second" className='outlined' client:load/>
+		<LinkButton m text="Корзина" icon="cart" href='/' client:load />
 		<MainButton text="Отключена" disabled={true} loading={false} client:load />
 		<MainButton text="Нажать" loading={true} client:load />
-		<LinkButton href="/second" icon="instagram" client:load />
+		<LinkButton href="/" icon="instagram" text='Инстаграм' client:load />
 		<LinkButton href="/second" icon="telegram" client:load />
 		<LinkButton href="/second" icon="youtube" client:load />
+		<MainButton m text="Детина" client:load />
 
 		<FormExamplePage client:load />
 

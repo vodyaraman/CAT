@@ -3,7 +3,7 @@ import Loader from '@/components/icons/Loader';
 import './buttons.scss';
 import Icon from '../icons/Icon';
 import clsx from 'clsx';
-import type { LinkButtonProps } from '@/types/interfaces';
+import type { LinkButtonProps } from '@/types/components.interfaces';
 import { getButtonSize } from './sizeUtil';
 
 /**

@@ -1,6 +1,6 @@
 import React from 'react';
 import './inputs.scss';
-import type { FormInputProps } from '@/types/interfaces';
+import type { FormInputProps } from '@/types/components.interfaces';
 
 /**
  * Переиспользуемое поле ввода с меткой и отображением ошибки.

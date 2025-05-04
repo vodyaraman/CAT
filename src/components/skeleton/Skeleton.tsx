@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import './skeleton.scss';
-import type { SkeletonProps } from '@/types/interfaces';
+import type { SkeletonProps } from '@/types/components.interfaces';
 
 /**
  * Компонент Skeleton

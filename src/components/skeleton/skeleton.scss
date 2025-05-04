@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // Базовые цвета
 $skeleton-base-color: $color-accent;
 $skeleton-radius: calc($border-radius * 1.5);
@@ -17,12 +19,10 @@ $skeleton-opacity: 0.8;
   animation: $skeleton-animation;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    90deg,
-    lighten($skeleton-base-color, 5%) 25%,
-    $skeleton-base-color 50%,
-    lighten($skeleton-base-color, 5%) 75%
-  );
+  background: linear-gradient(90deg,
+      color.adjust($skeleton-base-color, $lightness: 25%) 25%,
+      $skeleton-base-color 50%,
+      color.adjust($skeleton-base-color, $lightness: 25%) 75%);
   background-size: 400% 100%;
   min-height: 100px;
   box-shadow: $skeleton-box-shadow;
@@ -50,9 +50,11 @@ $skeleton-opacity: 0.8;
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }

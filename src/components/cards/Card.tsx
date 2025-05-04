@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import MainButton from '@/components/buttons/MainButton';
 import './cards.scss';
-import type { CardProps } from '@/types/interfaces';
+import type { CardProps } from '@/types/components.interfaces';
 
 /**
  * Карточка товара.

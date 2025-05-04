@@ -1,7 +1,7 @@
 import { type FC, useState } from 'react';
 import MainButton from '@/components/buttons/MainButton';
 import './Form.scss';
-import type { FormProps } from '@/types/interfaces';
+import type { FormProps } from '@/types/components.interfaces';
 
 /**
  * Компонент формы с заголовком, полями и встроенной кнопкой отправки.

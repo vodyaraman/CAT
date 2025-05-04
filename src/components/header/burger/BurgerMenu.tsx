@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import BurgerIcon from "../../../assets/icons/burger-icon.svg";
-import type { BurgerLink, BurgerMenuProps } from "@/types/interfaces";
+import type { BurgerLink, BurgerMenuProps } from "@/types/components.interfaces";
 
 const BurgerMenu: React.FC<BurgerMenuProps> = ({ links }) => {
   const wrapperRef = useRef<HTMLDivElement>(null);

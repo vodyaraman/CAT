@@ -25,10 +25,6 @@ $button-bg-color-hovered: $color-accent-hover;
     &:not(:disabled):hover {
         background-color: $button-bg-color-hovered;
         color: $button-color;
-
-        svg {
-            color: $button-color;
-        }
     }
 
     &--s {
@@ -78,6 +74,7 @@ $button-bg-color-hovered: $color-accent-hover;
         svg {
             width: 1.3em;
             height: 1.3em;
+            color: inherit;
         }
     }
 

@@ -37,7 +37,7 @@ const {
 	<body>
 		<LoadingScreen />
 		<SpriteProvider />
-		<main transition:animate="slide">
+		<main id="page-content">
 			<slot />
 			<AnimationManager client:only="react" />
 		</main>
